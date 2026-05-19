@@ -1,3 +1,11 @@
 01 programming server/node_modules
 02 api/node_modules
-03 rest api/node_modules
+03 rest api/node_modules 
+04 database/node_modules
+05 CRUD operations/node_modules
+
+# Environment variables (keep secrets out of git)
+**/.env
+
+## ** means "any folder at any depth"
+## It will ignore .env files inside all your project folders (01, 02, 03, 04, 05, and any future ones) — not just the current one
