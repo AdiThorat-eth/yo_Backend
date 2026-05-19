@@ -33,6 +33,16 @@ app.post("/notes", async (req, res) => {
   });
 });
 
+app.get("/notes", async (req, res) => {
+  // find method will read all the notes from db and return all the notes in array of objects
+  const notes = await noteModel.find();
+
+  res.status(200).json({
+    message: "Notes fetched successfully",
+    notes,
+  });
+});
+
 module.exports = app;
 
 // crud 1:09
