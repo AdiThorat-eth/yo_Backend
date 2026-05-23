@@ -3,11 +3,15 @@
 const express = require("express")
 const noteModel = require("./models/note.model")
 const cors = require("cors")
+const path = require("path")
 
 const app = express()
 
+// middleware
 app.use(cors())
 app.use(express.json())
+// it is used to make all files inside public folder publically available 
+app.use(express.static("./public"))
 
 /**
  * POST - /api/notes
@@ -56,7 +60,6 @@ app.delete("/api/notes/:id", async (req, res) => {
  * PATCH - /api/notes/:id
  * update a note using id from req.param
  */
-
 app.patch("/api/notes/:id", async (req, res) => {
     const id = req.params.id
     const { description } = req.body
@@ -69,5 +72,9 @@ app.patch("/api/notes/:id", async (req, res) => {
     })
 })
 
+// this * means this is wild card route means if any user send any request to route which is not defined in above routes then it will go in this route and execute this code
+app.use("*name", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "/public/index.html"))
+})
 
 module.exports = app;

@@ -15,3 +15,14 @@ html {
     "Helvetica Neue",
     sans-serif;
 }
+
+input {
+  background-color: #ffff;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
+
+button {
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+}
