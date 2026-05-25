@@ -1,4 +1,5 @@
 // server creation
+// npm run build is used to make dist folder which contains all the frontend build files
 
 const express = require("express")
 const noteModel = require("./models/note.model")
